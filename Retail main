@@ -66,12 +66,12 @@
   <script>
     // Function to navigate to the next page
     function goToNextPage() {
-      // Implement your next page logic here
+      window.location.href = 'Chart Defect by serv.html';
     }
 
     // Function to navigate to the previous page
     function goToPreviousPage() {
-      // Implement your previous page logic here
+       window.location.href = 'Chart Defect by serv.html';
     }
   </script>
 </body>
