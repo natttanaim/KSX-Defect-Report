@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defects in Retail Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 58px;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 2px;
+      margin: 0;
+    }
+    .underline {
+      border-bottom: 4px solid #FFFF00;
+      margin-top: 20px;
+      width: 60%;
+    }
+    .highlight {
+      font-size: 34px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .button-container {
+      margin-top: 40px;
+    }
+    .page-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .page-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Defects in Retail Project</h1>
+  <div class="underline"></div>
+  <div class="highlight">Total Defects 13</div>
+  <div class="button-container">
+    <button class="page-button" onclick="goToPreviousPage()">Previous</button>
+    <button class="page-button" onclick="goToNextPage()">Next</button>
+  </div>
+
+  <script>
+    // Function to navigate to the next page
+    function goToNextPage() {
+      // Implement your next page logic here
+    }
+
+    // Function to navigate to the previous page
+    function goToPreviousPage() {
+      // Implement your previous page logic here
+    }
+  </script>
+</body>
+</html>
