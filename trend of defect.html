@@ -40,7 +40,7 @@
         title: 'Defect Trend by Week for 3 Projects',
         curveType: 'function',
         legend: { position: 'bottom' },
-        width: 900,
+        width: '100%', // Make the chart width 100% of its container
         height: 400
       };
 
@@ -65,7 +65,7 @@
       padding: 0;
     }
     #container {
-      width: 900px;
+      max-width: 900px;
       margin: 20px auto;
       background-color: #fff;
       border-radius: 8px;
@@ -95,6 +95,13 @@
     }
     .page-button:hover {
       background-color: #45a049;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+      #container {
+        width: 95%; /* Adjusted width for smaller screens */
+      }
     }
   </style>
 </head>
