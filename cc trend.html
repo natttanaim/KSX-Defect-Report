@@ -12,7 +12,7 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-			['Last 5 Weeks', 0, 0],
+	    ['Last 5 Weeks', 0, 0],
             ['Last 4 Weeks', 0, 0],
             ['Last 3 Weeks', 1, 6],
             ['Last 2 Weeks', 3, 0],
@@ -21,7 +21,7 @@
         ]);
 
         var options = {
-            title: 'Retail Defects Trend by Week',
+            title: 'Contact Center Defects Trend by Week',
             curveType: 'function',
             legend: { position: 'bottom' },
             colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
