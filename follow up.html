@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Project', 'Defect didn\'t update over 7 days(exclude Assign)', 'Ready to retest didn\'t update over 14 days', 'Stage Completed to deploy to prod over 14 days'],
+        ['Retail', 4, 0, 0],
+        ['Contact-Center', 15, 5, 0],
+        ['CM', 0, 2, 4]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Defect Follow-up Status',
+        },
+        colors: ['Red', 'Orange', 'Pink'] // Set custom colors for the bars
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+    
+    function goToPreviousPage() {
+      window.location.href = 'trend_of_defect.html';
+    }
+    
+    function goToNextPage() {
+      window.location.href = 'retail main.html';
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    #columnchart_material {
+      width: 100%;
+      height: 400px;
+    }
+    .page-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .page-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+      #container {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Defect Follow-up Status by Project</h1>
+    <div id="columnchart_material"></div>
+    <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+    <button class="page-button" onclick="goToNextPage()">Next Page</button>
+  </div>
+</body>
+</html>
