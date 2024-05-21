@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defect KSX by Project</title>
+  <!-- Load Google Charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
@@ -5,11 +12,11 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Project", "Density", { role: "style" } ],
-        ["Contact-Center", 87, "#blue"],
-        ["Sales", 14, "red"],
-        ["DC", 0, "orange"],
-        ["Commercial", 31, "green"],
-		["Backend", 60, "pink"]
+        ["Contact-Center", 87, "#3366CC"],
+        ["Sales", 14, "#FF0000"],
+        ["DC", 0, "#FFA500"],
+        ["Commercial", 31, "#008000"],
+        ["Backend", 60, "#FFC0CB"]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -22,13 +29,61 @@
 
       var options = {
         title: "Defect KSX by Project",
-        width: 600,
+        width: 900,
         height: 400,
         bar: {groupWidth: "65%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
       chart.draw(view, options);
-  }
+    }
   </script>
-<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      width: 900px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    #columnchart_values {
+      width: 100%;
+      height: 400px;
+    }
+    #next-page-button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #next-page-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Defect KSX by Project</h1>
+    <div id="columnchart_values"></div>
+    <button id="next-page-button" onclick="window.location.href='Chart Defect by serv.html'">Next Page</button>
+  </div>
+</body>
+</html>
