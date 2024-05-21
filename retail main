@@ -66,12 +66,12 @@
   <script>
     // Function to navigate to the next page
     function goToNextPage() {
-      window.location.href = 'Sales by Stage.html';
+      window.location.href = 'sales by stage.html';
     }
 
     // Function to navigate to the previous page
     function goToPreviousPage() {
-       window.location.href = 'Chart Defect by serv.html';
+       window.location.href = 'trend of defect.html';
     }
   </script>
 </body>
