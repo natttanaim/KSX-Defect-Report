@@ -29,8 +29,6 @@
 
       var options = {
         title: "Defect KSX by Project",
-        width: 900,
-        height: 400,
         bar: {groupWidth: "65%"},
         legend: { position: "none" },
       };
@@ -46,7 +44,7 @@
       padding: 0;
     }
     #container {
-      width: 900px;
+      width: 90%;
       margin: 20px auto;
       background-color: #fff;
       border-radius: 8px;
@@ -76,6 +74,13 @@
     }
     #next-page-button:hover {
       background-color: #45a049;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+      #container {
+        width: 95%;
+      }
     }
   </style>
 </head>
