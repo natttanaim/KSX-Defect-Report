@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defects Status by Week</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Week', 'Open Defects', 'Closed Defects'],
+			['Last 5 Weeks', 0, 0],
+            ['Last 4 Weeks', 0, 0],
+            ['Last 3 Weeks', 1, 6],
+            ['Last 2 Weeks', 3, 0],
+            ['Last Week', 5, 0]
+            // Add more data as needed
+        ]);
+
+        var options = {
+            title: 'Retail Defects Trend by Week',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+    
+    function goToPreviousPage() {
+      window.location.href = 'cc by stage.html';
+    }
+    
+    function goToNextPage() {
+      window.location.href = 'cm main.html';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    #chart_div {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .page-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+        transition: background-color 0.3s;
+    }
+
+    .page-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+        #chart_div {
+            margin-top: 40px;
+        }
+
+        .page-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="chart_div"></div>
+<div class="button-container">
+    <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+    <button class="page-button" onclick="goToNextPage()">Next Page</button>
+</div>
+</body>
+</html>
