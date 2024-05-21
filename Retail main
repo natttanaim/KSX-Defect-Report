@@ -66,7 +66,7 @@
   <script>
     // Function to navigate to the next page
     function goToNextPage() {
-      window.location.href = 'Chart Defect by serv.html';
+      window.location.href = 'Sales by Stage.html';
     }
 
     // Function to navigate to the previous page
