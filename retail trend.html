@@ -17,10 +17,10 @@
     function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-            ['Last 5 Weeks', 0, 0],
-            ['Last 4 Weeks', 0, 1],
-            ['Last 3 Weeks', 0, 0],
-            ['Last 2 Weeks', 0, 2],
+            ['Last 5 Weeks', 0, 1],
+            ['Last 4 Weeks', 0, 0],
+            ['Last 3 Weeks', 0, 2],
+            ['Last 2 Weeks', 0, 0],
             ['Last Week', 0, 0]
         ]);
 
@@ -37,12 +37,8 @@
 
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Defect Category', 'Count'],
-            ['UI', 3],
-            ['Backend', 5],
-            ['API', 2],
-            ['Database', 4],
-            ['Security', 1]
+            ['Defect Category', 'Count']
+
         ]);
 
         var options = {
