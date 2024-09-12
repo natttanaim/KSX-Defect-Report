@@ -12,10 +12,10 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-	    ['Last 5 Weeks', 1, 0],
-            ['Last 4 Weeks', 3, 2],
-            ['Last 3 Weeks', 2, 1],
-            ['Last 2 Weeks', 3, 2],
+	    ['Last 5 Weeks', 3, 2],
+            ['Last 4 Weeks', 2, 1],
+            ['Last 3 Weeks', 3, 2],
+            ['Last 2 Weeks', 2, 0],
             ['Last Week', 2, 0]
             // Add more data as needed
         ]);
@@ -30,6 +30,41 @@
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
         chart.draw(data, options);
+    }
+
+    function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Defect Category', 'Count'],
+	    ['Chat Swithching', '3'],
+	    ['Data Invalid', '6'],
+	    ['Cfr', '4'],
+            ['Apex code', '1']
+        ]);
+
+        var options = {
+            title: 'New Defects by Category',
+            legend: { position: 'none' },
+            colors: ['#1E90FF'],
+            bar: {groupWidth: "65%"},
+            hAxis: {
+                title: 'Defect Category'
+            },
+            vAxis: {
+                title: 'Count'
+            },
+            height: 300
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+        chart.draw(data, options);
+    }
+    
+    function goToPreviousPage() {
+      window.location.href = 'retail by stage.html';
+    }
+    
+    function goToNextPage() {
+      window.location.href = 'cc main.html';
     }
     
     function goToPreviousPage() {
