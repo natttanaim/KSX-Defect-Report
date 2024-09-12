@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Defects Status by Week</title>
+<title>Commercial Defects Trend by Week</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart', 'bar']});
@@ -38,10 +38,10 @@
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Chat Switching', 3, '#ff5733', '3'],
-            ['cfr', 4, '#33ff57', '4'],
-            ['Data Invalid', 1, '#3357ff', '1'],
-            ['Apex Error', 2, '#ff33a6', '2']
+            ['Configuration', 3, '#ff5733', '3'],
+            ['cfr', 1, '#33ff57', '1'],
+            ['Purge Issue', 1, '#3357ff', '1'],
+            ['Unassigned', 1, '#ff33a6', '1']
         ]);
 
         var options = {
