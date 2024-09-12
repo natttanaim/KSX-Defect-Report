@@ -6,17 +6,18 @@
 <title>Retail Defect by Status</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    google.charts.load("current", {packages:["corechart"]});
+    google.charts.load("current", {packages:["corechart", "bar"]});
     google.charts.setOnLoadCallback(drawChart);
+
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Type', 'Count'],
-            ['Need more Information', 1],
-            ['Fixed',    2],
-            ['Ready to Production Deploy',    1],
-            ['Fix In Progress',    1],
-            ['Investigating',    1],
-            ['Assigns',    3]
+            ['Type', 'Count', { role: 'style' }, { role: 'annotation' }],
+            ['Need more Information', 1, '#ff5733', '1'],
+            ['Fixed', 2, '#33ff57', '2'],
+            ['Ready to Production Deploy', 1, '#3357ff', '1'],
+            ['Fix In Progress', 1, '#ff33a6', '1'],
+            ['Investigating', 1, '#a633ff', '1'],
+            ['Assigns', 3, '#33fff3', '3']
         ]);
 
         var options = {
@@ -30,7 +31,15 @@
             },
             legend: { position: "none" },
             bar: {groupWidth: "65%"},
-            height: 400
+            height: 400,
+            annotations: {
+                alwaysOutside: false,
+                textStyle: {
+                    fontSize: 12,
+                    color: '#000',
+                    auraColor: 'none'
+                }
+            }
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('barchart'));
@@ -80,7 +89,7 @@
     }
 
     .button-container {
-        margin-top: 100px; /* Moved buttons down by 100px */
+        margin-top: 100px;
         text-align: center;
     }
 
