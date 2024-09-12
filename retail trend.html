@@ -7,17 +7,21 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawCharts);
 
-    function drawChart() {
+    function drawCharts() {
+        drawLineChart();
+        drawBarChart();
+    }
+
+    function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-	    ['Last 5 Weeks', 0, 0],
+            ['Last 5 Weeks', 0, 0],
             ['Last 4 Weeks', 0, 1],
             ['Last 3 Weeks', 0, 0],
             ['Last 2 Weeks', 0, 2],
             ['Last Week', 0, 0]
-            // Add more data as needed
         ]);
 
         var options = {
@@ -27,8 +31,35 @@
             colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+        chart.draw(data, options);
+    }
 
+    function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Defect Category', 'Count'],
+            ['UI', 3],
+            ['Backend', 5],
+            ['API', 2],
+            ['Database', 4],
+            ['Security', 1]
+        ]);
+
+        var options = {
+            title: 'Defects by Category',
+            legend: { position: 'none' },
+            colors: ['#1E90FF'],
+            bar: {groupWidth: "65%"},
+            hAxis: {
+                title: 'Defect Category'
+            },
+            vAxis: {
+                title: 'Count'
+            },
+            height: 300
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
         chart.draw(data, options);
     }
     
@@ -49,7 +80,7 @@
         padding: 0;
     }
 
-    #chart_div {
+    #line_chart_div, #bar_chart_div {
         width: 100%;
         max-width: 800px;
         margin: 20px auto;
@@ -81,7 +112,7 @@
 
     /* Media Query for Mobile Devices */
     @media only screen and (max-width: 600px) {
-        #chart_div {
+        #line_chart_div, #bar_chart_div {
             margin-top: 40px;
         }
 
@@ -94,7 +125,8 @@
 </style>
 </head>
 <body>
-<div id="chart_div"></div>
+<div id="line_chart_div"></div>
+<div id="bar_chart_div"></div>
 <div class="button-container">
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
     <button class="page-button" onclick="goToNextPage()">Next Page</button>
