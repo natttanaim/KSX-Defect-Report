@@ -11,17 +11,17 @@
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Type', 'Count'],
-            ['To be discussed',  1],
-            ['Need more information',  2],
-            ['Reopen',  6],
-            ['Completed for Deployment',  7],
-            ['Ready to retest',  10],
-            ['Fix In Progress', 15],
-            ['Ready to deploy', 2],
-            ['Investigating', 9],
-            ['Assigns', 34],
-            ['New', 5]
+            ['Type', 'Count', { role: 'annotation' }],
+            ['To be discussed',  1, '1'],
+            ['Need more information',  2, '2'],
+            ['Reopen',  6, '6'],
+            ['Completed for Deployment',  7, '7'],
+            ['Ready to retest',  10, '10'],
+            ['Fix In Progress', 15, '15'],
+            ['Ready to deploy', 2, '2'],
+            ['Investigating', 9, '9'],
+            ['Assigns', 34, '34'],
+            ['New', 5, '5']
         ]);
 
         var options = {
@@ -35,8 +35,16 @@
             vAxis: {
                 title: 'Defect Stage'
             },
-            colors: ['#ff5733', '#33ff57', '#3357ff', '#ff33a6', '#a633ff', '#33fff3', '#ffc733', '#33ff94', '#ff3333', '#ff8f33'], // Array of colors
-            bar: {groupWidth: "85%"} // Adjust bar width if needed
+            annotations: {
+                alwaysOutside: false,
+                textStyle: {
+                    fontSize: 12,
+                    auraColor: 'none',
+                    color: '#000'
+                }
+            },
+            colors: ['#ff5733', '#33ff57', '#3357ff', '#ff33a6', '#a633ff', '#33fff3', '#ffc733', '#33ff94', '#ff3333', '#ff8f33'],
+            bar: {groupWidth: "85%"}
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('barchart_div'));
