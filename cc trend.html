@@ -17,11 +17,11 @@
     function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-            ['Last 5 Weeks', 3, 2],
-            ['Last 4 Weeks', 2, 1],
-            ['Last 3 Weeks', 3, 2],
+            ['Last 5 Weeks', 2, 1],
+            ['Last 4 Weeks', 3, 2],
+            ['Last 3 Weeks', 2, 0],
             ['Last 2 Weeks', 2, 0],
-            ['Last Week', 2, 0]
+            ['Last Week', 2, 13]
         ]);
 
         var options = {
@@ -38,10 +38,12 @@
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Chat Switching', 3, '#ff5733', '3'],
-            ['cfr', 4, '#33ff57', '4'],
-            ['Data Invalid', 1, '#3357ff', '1'],
-            ['Apex Error', 2, '#ff33a6', '2']
+            ['Email', 1, '#ff5733', '1'],
+            ['cfr', 1, '#33ff57', '1'],
+            ['Live Chat', 5, '#3357ff', '4'],
+            ['Pantip', 2, '#ff33a6', '2'],
+            ['Chat-Switching', 1, '#fd33a6', '1'],
+            ['CCRP', 1, '#fa13f6', '1']
         ]);
 
         var options = {
