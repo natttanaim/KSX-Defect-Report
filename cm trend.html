@@ -21,7 +21,7 @@
             ['Last 4 Weeks', 2, 1],
             ['Last 3 Weeks', 1, 0],
             ['Last 2 Weeks', 1, 0],
-            ['Last Week', 0, 9]
+            ['Last Week', 3, 9]
         ]);
 
         var options = {
@@ -38,10 +38,10 @@
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Configuration', 3, '#ff5733', '3'],
-            ['Apex Error', 1, '#33ff57', '1'],
+            ['Configuration', 4, '#ff5733', '4'],
+            ['Apex Error', 2, '#33ff57', '2'],
             ['Purge Issue', 1, '#3357ff', '1'],
-            ['Unassigned', 1, '#ff33a6', '1']
+            ['Data Invalid', 2, '#ff33a6', '2']
         ]);
 
         var options = {
