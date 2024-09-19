@@ -29,7 +29,7 @@
 
       var options = {
         title: "Defect KSX by Project",
-        backgroundColor: '#f4f4f4',  // Set chart background color
+        backgroundColor: 'transparent',  // Set chart background to transparent
         bar: {groupWidth: "65%"},
         legend: { position: "none" },
       };
@@ -40,7 +40,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f4f4f4; /* Background color of the whole page */
       margin: 0;
       padding: 0;
     }
@@ -48,11 +48,11 @@
       width: 90%;
       max-width: 800px;
       margin: 20px auto;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
       text-align: center;
+      background-color: #f4f4f4; /* Same as body background to blend in */
+      border: none;
+      box-shadow: none;
     }
     h1 {
       text-align: center;
