@@ -52,9 +52,52 @@
     .page-button:hover {
       background-color: #45a049;
     }
+
+            /* Navigation Menu */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .navbar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Page Content */
+    .content {
+      padding-top: 60px; /* Adjust this if your navbar height changes */
+    }
   </style>
 </head>
 <body>
+
+  <div class="navbar">
+    <a href="index.html" >Home</a>
+    <a href="retail main.html" >Defect Sales</a>
+    <a href="cc main.html" class="active">Defect Contact Center</a>
+    <a href="cm main.html">Defect Commercial</a>
+  </div>
+  
   <h1>Defects in Contact Center Project</h1>
   <div class="underline"></div>
   <div class="highlight">Total Defects: 82</div>
