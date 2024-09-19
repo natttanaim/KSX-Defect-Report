@@ -11,17 +11,17 @@
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Type', 'Count', { role: 'annotation' }],
-            ['To be discussed',  2, '2'],
-            ['Need more information',  3, '3'],
-            ['Reopen',  2, '2'],
-            ['Completed for Deployment',  2, '2'],
-            ['Ready to retest',  9, '9'],
-            ['Fix In Progress', 9, '9'],
-            ['Ready to deploy', 5, '5'],
-            ['Investigating', 9, '9'],
-            ['Assigns', 36, '36'],
-            ['New', 5, '5']
+            ['Type', 'Count', { role: 'style' },{ role: 'annotation' }],
+            ['To be discussed',  2, '#D1E9F6', '2'],
+            ['Need more information',  3, '#F6EACB', '3'],
+            ['Reopen',  2, '#F1D3CE', '2'],
+            ['Completed for Deployment',  2, '#EECAD5', '2'],
+            ['Ready to retest',  9, '#D1E9F6', '9'],
+            ['Fix In Progress', 9, '#F6EACB', '9'],
+            ['Ready to deploy', 5, '#F1D3CE', '5'],
+            ['Investigating', 9, '#EECAD5','9'],
+            ['Assigns', 36, '#D1E9F6','36'],
+            ['New', 5, '#F6EACB', '5']
         ]);
 
         var options = {
@@ -43,7 +43,6 @@
                     color: '#000'
                 }
             },
-            colors: ['#ff5733', '#33ff57', '#3357ff', '#ff33a6', '#a633ff', '#33fff3', '#ffc733', '#33ff94', '#ff3333', '#ff8f33'],
             bar: {groupWidth: "85%"}
         };
 
