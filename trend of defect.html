@@ -80,6 +80,7 @@
       margin: 0;
       padding: 0;
     }
+
     #container {
       max-width: 900px;
       margin: 60px auto;
@@ -89,13 +90,16 @@
       padding: 20px;
       text-align: center;
     }
+
     h1 {
       text-align: center;
     }
+
     #linechart {
       width: 100%;
       height: 400px;
     }
+
     .page-button {
       background-color: #4CAF50;
       border: none;
@@ -107,18 +111,14 @@
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 20px; /* Added margin to separate buttons from chart */
+      margin-top: 20px;
     }
+
     .page-button:hover {
       background-color: #45a049;
     }
 
-    /* Media Query for Mobile Devices */
-    @media only screen and (max-width: 600px) {
-      #container {
-        width: 95%; /* Adjusted width for smaller screens */
-      }
-          /* Navigation Menu */
+    /* Navigation Menu */
     .navbar {
       overflow: hidden;
       background-color: #333;
@@ -152,12 +152,23 @@
     .content {
       padding-top: 60px; /* Adjust this if your navbar height changes */
     }
-    
+
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+      #container {
+        width: 95%;
+      }
+      
+      .page-button {
+        padding: 10px 24px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
 
-    <!-- Navigation Menu -->
+  <!-- Navigation Menu -->
   <div class="navbar">
     <a href="index.html" class="active">Home</a>
     <a href="retail main.html">Defect Sales</a>
@@ -172,5 +183,6 @@
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
     <button class="page-button" onclick="goToNextPage()">Next Page</button>
   </div>
+
 </body>
 </html>
