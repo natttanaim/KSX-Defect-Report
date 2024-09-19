@@ -83,14 +83,60 @@
         width: 95%;
       }
     }
+
+    /* Navigation Menu */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .navbar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Page Content */
+    .content {
+      padding-top: 60px; /* Adjust this if your navbar height changes */
+    }
   </style>
 </head>
 <body>
-  <div id="container">
-    <div id="update-date">Updated: September 12, 2024</div>
-    <h1>Defect KSX by Project</h1>
-    <div id="columnchart_values"></div>
-    <button id="next-page-button" onclick="window.location.href='chart defect by serv.html'">Next Page</button>
+  <!-- Navigation Menu -->
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="chart_defect_by_serv.html">Defect by Service</a>
+    <a href="another_page.html">Another Page</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div id="container">
+      <div id="update-date">Updated: September 12, 2024</div>
+      <h1>Defect KSX by Project</h1>
+      <div id="columnchart_values"></div>
+      <button id="next-page-button" onclick="window.location.href='chart defect by serv.html'">Next Page</button>
+    </div>
   </div>
 </body>
 </html>
