@@ -1,165 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retail Defect by Status</title>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load("current", {packages:["corechart", "bar"]});
-    google.charts.setOnLoadCallback(drawChart);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Defect by Status</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart", "bar"]});
+        google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Type', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Need more Information', 1, #B9F3E4', '1'],
-            ['Fixed', 2, '#EA8FEA', '2'],
-            ['Ready to Production Deploy', 1, '#F1D3CE', '1'],
-            ['Fix In Progress', 1, '#EECAD5', '1'],
-            ['Investigating', 1, '#E3A5C7', '1'],
-            ['Assigns', 3, '#E3A5C7', '3']
-        ]);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Type', 'Count', { role: 'style' }, { role: 'annotation' }],
+                ['Need more Information', 1, '#B9F3E4', '1'],
+                ['Fixed', 2, '#EA8FEA', '2'],
+                ['Ready to Production Deploy', 1, '#F1D3CE', '1'],
+                ['Fix In Progress', 1, '#EECAD5', '1'],
+                ['Investigating', 1, '#E3A5C7', '1'],
+                ['Assigns', 3, '#E3A5C7', '3']
+            ]);
 
-        var options = {
-            title: 'Retail Defect by Stage',
-            hAxis: {
-                title: 'Count',
-                minValue: 0
-            },
-            vAxis: {
-                title: 'Defect Stage'
-            },
-            legend: { position: "none" },
-            bar: {groupWidth: "65%"},
-            height: 400,
-            annotations: {
-                alwaysOutside: false,
-                textStyle: {
-                    fontSize: 12,
-                    color: '#000',
-                    auraColor: 'none'
+            var options = {
+                title: 'Retail Defect by Stage',
+                hAxis: {
+                    title: 'Count',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'Defect Stage'
+                },
+                legend: { position: "none" },
+                bar: {groupWidth: "65%"},
+                height: 400,
+                annotations: {
+                    alwaysOutside: false,
+                    textStyle: {
+                        fontSize: 12,
+                        color: '#000',
+                        auraColor: 'none'
+                    }
                 }
-            }
-        };
+            };
 
-        var chart = new google.visualization.BarChart(document.getElementById('barchart'));
-        chart.draw(data, options);
-    }
+            var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+            chart.draw(data, options);
+        }
 
-    // Function to navigate to the next page
-    function goToNextPage() {
-        window.location.href = "retail trend.html";
-    }
+        // Function to navigate to the next page
+        function goToNextPage() {
+            window.location.href = "retail trend.html";
+        }
 
-    // Function to navigate to the previous page
-    function goToPreviousPage() {
-        window.location.href = "retail main.html";
-    }
-</script>
+        // Function to navigate to the previous page
+        function goToPreviousPage() {
+            window.location.href = "retail main.html";
+        }
+    </script>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    #container {
-        width: 100%;
-        height: 100%;
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    #barchart {
-        width: 100%;
-        height: 350px;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .button-container {
-        margin-top: 100px;
-        text-align: center;
-    }
-
-    .page-button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        margin: 10px;
-    }
-
-    .page-button:hover {
-        background-color: #45a049;
-    }
-
-    @media screen and (max-width: 600px) {
         #container {
-            padding: 10px;
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
         }
 
         #barchart {
-            max-width: 100%;
+            width: 100%;
+            height: 350px;
+            max-width: 700px;
+            margin: 0 auto;
         }
-    }
-    /* Navigation Menu */
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
 
-    .navbar a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-size: 17px;
-    }
+        .button-container {
+            margin-top: 100px;
+            text-align: center;
+        }
 
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
+        .page-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
 
-    .navbar a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
+        .page-button:hover {
+            background-color: #45a049;
+        }
 
-    /* Page Content */
-    .content {
-      padding-top: 60px; /* Adjust this if your navbar height changes */
-    }
-</style>
+        @media screen and (max-width: 600px) {
+            #container {
+                padding: 10px;
+            }
+
+            #barchart {
+                max-width: 100%;
+            }
+        }
+
+        /* Navigation Menu */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Page Content */
+        .content {
+            padding-top: 60px; /* Adjust this if your navbar height changes */
+        }
+    </style>
 </head>
 <body>
 
 <div class="navbar">
-    <a href="index.html" >Home</a>
+    <a href="index.html">Home</a>
     <a href="retail main.html" class="active">Defect Sales</a>
     <a href="cc main.html">Defect Contact Center</a>
     <a href="cm main.html">Defect Commercial</a>
@@ -173,5 +174,6 @@
         <button class="page-button" onclick="goToNextPage()">Next Page</button>
     </div>
 </div>
+
 </body>
 </html>
