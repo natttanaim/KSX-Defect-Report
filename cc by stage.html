@@ -3,192 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Center Defect by Stage</title>
+<title>Defects Status by Week</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    google.charts.load("current", {packages:["corechart", "bar"]});
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {'packages':['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawCharts);
 
-    function drawChart() {
+    function drawCharts() {
+        drawLineChart();
+        drawBarChart();
+    }
+
+    function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Type', 'Count', { role: 'annotation' }],
-            ['To be discussed',  2, '2'],
-            ['Need more information',  3, '3'],
-            ['Reopen',  2, '2'],
-            ['Completed for Deployment',  2, '2'],
-            ['Ready to retest',  9, '9'],
-            ['Fix In Progress', 9, '9'],
-            ['Ready to deploy', 5, '5'],
-            ['Investigating', 9, '9'],
-            ['Assigns', 36, '36'],
-            ['New', 5, '5']
+            ['Week', 'Open Defects', 'Closed Defects'],
+            ['Last 5 Weeks', 2, 1],
+            ['Last 4 Weeks', 3, 2],
+            ['Last 3 Weeks', 2, 0],
+            ['Last 2 Weeks', 2, 0],
+            ['Last Week', 2, 13]
         ]);
 
         var options = {
-            title: 'Contact Center Defect by Stage',
-            legend: { position: 'none' },
-            chartArea: {width: '50%'},
+            title: 'Contact Center Defects Trend by Week',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            colors: ['#FF0000', '#00FF00'], // Red for Open Defects, Green for Closed Defects
+            backgroundColor: '#f4f4f4', // Same as webpage background
+            chartArea: { backgroundColor: '#f4f4f4' } // Ensures the chart area matches
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('linechart_div'));
+        chart.draw(data, options);
+    }
+
+    function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
+            ['Email', 1, '#ff5733', '1'],
+            ['cfr', 1, '#33ff57', '1'],
+            ['Live Chat', 5, '#3357ff', '5'],
+            ['Pantip', 2, '#ff33a6', '2'],
+            ['Chat-Switching', 1, '#5d3216', '1'],
+            ['CCRP', 1, '#aa235f6', '1']
+        ]);
+
+        var options = {
+            title: 'New Defect Categories',
             hAxis: {
-                title: 'Defect Count',
+                title: 'Count',
                 minValue: 0
             },
             vAxis: {
-                title: 'Defect Stage'
+                title: 'New Defect Category'
             },
+            legend: { position: "none" },
+            bar: {groupWidth: "65%"},
+            height: 300,
             annotations: {
                 alwaysOutside: false,
                 textStyle: {
                     fontSize: 12,
-                    auraColor: 'none',
-                    color: '#000'
+                    color: '#000',
+                    auraColor: 'none'
                 }
             },
-            colors: ['#ff5733', '#33ff57', '#3357ff', '#ff33a6', '#a633ff', '#33fff3', '#ffc733', '#33ff94', '#ff3333', '#ff8f33'],
-            bar: {groupWidth: "85%"}
+            backgroundColor: '#f4f4f4', // Same as webpage background
+            chartArea: { backgroundColor: '#f4f4f4' } // Ensures the chart area matches
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('barchart_div'));
         chart.draw(data, options);
     }
 
-    // Function to navigate to the next page
-    function goToNextPage() {
-        window.location.href = "cc trend.html";
+    function goToPreviousPage() {
+      window.location.href = 'cc by stage.html';
     }
 
-    // Function to navigate to the previous page
-    function goToPreviousPage() {
-        window.location.href = "cc main.html";
+    function goToNextPage() {
+      window.location.href = 'cm main.html';
     }
 </script>
 
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #f4f4f4; /* Webpage background color */
         margin: 0;
         padding: 0;
     }
 
-    #container {
-        width: 100%;
-        height: 100%;
-        max-width: 800px;
+    /* Flex container for the charts */
+    .charts-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1200px;
         margin: 60px auto;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        margin-left: 220px; /* To account for the navbar width */
     }
 
-    h1 {
-        text-align: center;
-    }
-
-    #barchart_div {
-        width: 100%;
-        height: 350px;
-        max-width: 700px;
-        margin: 0 auto;
+    #linechart_div, #barchart_div {
+        width: 45%; /* Adjusted width for both charts */
+        max-width: 600px;
     }
 
     .button-container {
-        margin-top: 20px;
         text-align: center;
+        margin-top: 20px;
     }
 
     .page-button {
         background-color: #4CAF50;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 10px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        border-radius: 8px;
+        border-radius: 5px;
         cursor: pointer;
-        margin: 10px;
+        margin: 0 10px;
+        transition: background-color 0.3s;
     }
 
     .page-button:hover {
         background-color: #45a049;
     }
 
-    /* Sidebar Menu */
+    /* Media Query for Mobile Devices */
+    @media only screen and (max-width: 600px) {
+        .charts-container {
+            flex-direction: column; /* Stack the charts vertically on small screens */
+        }
+
+        #linechart_div, #barchart_div {
+            width: 100%; /* Full width for charts on mobile */
+            margin-top: 20px;
+        }
+
+        .page-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+    }
+
+    /* Navigation Menu */
     .navbar {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #333;
-        padding-top: 20px;
-        z-index: 1000;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
     .navbar a {
-        padding: 15px 20px;
-        text-align: left;
-        text-decoration: none;
-        display: block;
-        font-size: 17px;
-        color: white;
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
     }
 
     .navbar a:hover {
-        background-color: #ddd;
-        color: black;
+      background-color: #ddd;
+      color: black;
     }
 
     .navbar a.active {
-        background-color: #4CAF50;
-        color: white;
+      background-color: #4CAF50;
+      color: white;
     }
 
     /* Page Content */
     .content {
-        padding-left: 220px; /* Leave space for the sidebar */
-    }
-
-    @media screen and (max-width: 600px) {
-        #container {
-            padding: 10px;
-        }
-
-        #barchart_div {
-            max-width: 100%;
-        }
-
-        .navbar {
-            width: 100px; /* Narrower sidebar for small screens */
-        }
-
-        #container {
-            margin-left: 120px; /* Adjust content padding */
-        }
+      padding-top: 60px; /* Adjust this if your navbar height changes */
     }
 </style>
 </head>
 <body>
-
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="retail main.html">Defect Sales</a>
+    <a href="index.html" >Home</a>
+    <a href="retail main.html" >Defect Sales</a>
     <a href="cc main.html" class="active">Defect Contact Center</a>
     <a href="cm main.html">Defect Commercial</a>
 </div>
-
-<div id="container" class="content">
-    <h1>Contact Center Defect by Stage</h1>
+    
+<div class="charts-container">
+    <div id="linechart_div"></div>
     <div id="barchart_div"></div>
-    <div class="button-container">
-        <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
-        <button class="page-button" onclick="goToNextPage()">Next Page</button>
-    </div>
 </div>
 
+<div class="button-container">
+    <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+    <button class="page-button" onclick="goToNextPage()">Next Page</button>
+</div>
 </body>
 </html>
