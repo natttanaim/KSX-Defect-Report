@@ -12,19 +12,20 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Type', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['To be discussed', 1, '#ff5733', '1'],
-            ['Request to close', 2, '#33ff57', '2'],
-            ['Completed for deploy', 9, '#3357ff', '9'],
-            ['Ready to retest', 8, '#ff33a6', '8'],
-            ['Fix In Progress', 1, '#ff9933', '1'],
-            ['Ready to deploy', 2, '#33ffcc', '2'],
-            ['Investigating', 5, '#cc33ff', '5'],
-            ['Assigns', 6, '#ffcc33', '6'],
-            ['New', 0, '#c0c0c0', '0']
+            ['To be discussed', 1, '#D1E9F6', '1'],
+            ['Request to close', 2, '#F6EACB', '2'],
+            ['Completed for deploy', 9, '#F1D3CE', '9'],
+            ['Ready to retest', 8, '#EECAD5', '8'],
+            ['Fix In Progress', 1, '#D1E9F6', '1'],
+            ['Ready to deploy', 2, '#F6EACB', '2'],
+            ['Investigating', 5, '#F1D3CE', '5'],
+            ['Assigns', 6, '#D1E9F6', '6'],
+            ['New', 0, '#F6EACB', '0']
         ]);
 
         var options = {
             title: 'Commercial Defect by Stage',
+            backgroundColor: 'transparent',
             hAxis: {
                 title: 'Count',
                 minValue: 0
@@ -60,7 +61,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #fff;
         margin: 0;
         padding: 0;
     }
@@ -72,7 +73,6 @@
         margin: 20px auto;
         background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
     }
@@ -120,9 +120,60 @@
             max-width: 100%;
         }
     }
+
+        /* Updated Navigation Menu */
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* Page Content */
+    .content {
+        padding-top: 60px; /* Adjust this if your navbar height changes */
+    }
+
+    @media screen and (max-width: 600px) {
+        #container {
+            padding: 10px;
+        }
+
+        #barchart_div {
+            max-width: 100%;
+        }
+    }
 </style>
 </head>
 <body>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="retail main.html">Defect Sales</a>
+    <a href="cc main.html">Defect Contact Center</a>
+    <a href="cm main.html" class="active">Defect Commercial</a>
+</div>
 <div id="container">
     <h1>Commercial Defect by Stage</h1>
     <div id="barchart_div"></div>
