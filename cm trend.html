@@ -26,9 +26,10 @@
 
         var options = {
             title: 'Commercial Defects Trend by Week',
+            backgroundColor: 'transparent',
             curveType: 'function',
             legend: { position: 'bottom' },
-            colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
+            colors: ['#F05A7E', '#48CFCB'] // Red for Open Defects, Green for Closed Defects
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('linechart_div'));
@@ -46,6 +47,7 @@
 
         var options = {
             title: 'New Defect Categories',
+            backgroundColor: 'transparent',
             hAxis: {
                 title: 'Count',
                 minValue: 0
@@ -82,7 +84,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #fff;
         margin: 0;
         padding: 0;
     }
