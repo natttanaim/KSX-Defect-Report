@@ -25,7 +25,7 @@
         ]);
 
         var options = {
-            title: 'Commercial Defects Defects Trend by Week',
+            title: 'Commercial Defects Trend by Week',
             curveType: 'function',
             legend: { position: 'bottom' },
             colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
@@ -38,10 +38,10 @@
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Configuration', 4, '#ff5733', '4'],
-            ['Apex Error', 2, '#33ff57', '2'],
-            ['Purge Issue', 1, '#3357ff', '1'],
-            ['Data Invalid', 2, '#ff33a6', '2']
+            ['Configuration', 4, '#E5D9F2', '4'],
+            ['Apex Error', 2, '#F5EFFF', '2'],
+            ['Purge Issue', 1, '#CDC1FF', '1'],
+            ['Data Invalid', 2, '#A594F9', '2']
         ]);
 
         var options = {
@@ -73,7 +73,7 @@
     function goToPreviousPage() {
       window.location.href = 'cm by stage.html';
     }
-    
+
     function goToNextPage() {
       window.location.href = 'thankyou.html';
     }
@@ -87,16 +87,18 @@
         padding: 0;
     }
 
-    #linechart_div {
-        width: 50%; /* Adjusted width for the line chart */
-        max-width: 800px;
-        margin: 20px auto;
+    /* Flex container for the charts */
+    .charts-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1200px;
+        margin: 60px auto;
     }
 
-    #barchart_div {
-        width: 70%; /* Retained width for the bar chart */
-        max-width: 800px;
-        margin: 20px auto;
+    #linechart_div, #barchart_div {
+        width: 45%; /* Adjusted width for both charts */
+        max-width: 600px;
     }
 
     .button-container {
@@ -125,8 +127,13 @@
 
     /* Media Query for Mobile Devices */
     @media only screen and (max-width: 600px) {
+        .charts-container {
+            flex-direction: column; /* Stack the charts vertically on small screens */
+        }
+
         #linechart_div, #barchart_div {
-            margin-top: 40px;
+            width: 100%; /* Full width for charts on mobile */
+            margin-top: 20px;
         }
 
         .page-button {
@@ -135,11 +142,56 @@
             margin: 0 5px;
         }
     }
+
+    /* Navigation Menu */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .navbar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Page Content */
+    .content {
+      padding-top: 60px; /* Adjust this if your navbar height changes */
+    }
 </style>
 </head>
 <body>
-<div id="linechart_div"></div>
-<div id="barchart_div"></div>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="retail main.html">Defect Sales</a>
+    <a href="cc main.html">Defect Contact Center</a>
+    <a href="cm main.html" class="active">Defect Commercial</a>
+</div>
+
+<div class="charts-container">
+    <div id="linechart_div"></div>
+    <div id="barchart_div"></div>
+</div>
+
 <div class="button-container">
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
     <button class="page-button" onclick="goToNextPage()">Next Page</button>
