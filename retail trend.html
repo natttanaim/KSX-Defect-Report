@@ -26,9 +26,10 @@
 
         var options = {
             title: 'Retail Defects Trend by Week',
+            backgroundColor: 'transparent',
             curveType: 'function',
             legend: { position: 'bottom' },
-            colors: ['#FF0000', '#00FF00'] // Red for Open Defects, Green for Closed Defects
+            colors: ['#F05A7E', '#48CFCB'] // Red for Open Defects, Green for Closed Defects
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
@@ -71,7 +72,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #fff;
         margin: 0;
         padding: 0;
     }
