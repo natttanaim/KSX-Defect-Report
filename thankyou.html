@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,12 +14,17 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            background-image: url('https://example.com/background-image.jpg'); /* Add your professional background image */
+            background-size: cover;
+            background-position: center;
         }
 
         .container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Transparent white for readability */
             border-radius: 10px;
-            padding: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
             animation: fadeIn 1s ease-out;
         }
 
@@ -31,22 +35,26 @@
 
         h1 {
             color: #333;
+            font-size: 36px;
             margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
+            color: #555;
             margin-bottom: 20px;
         }
 
-        .emoji {
-            font-size: 48px;
+        .icon-container {
+            font-size: 72px;
+            color: #4CAF50; /* Matching the button color */
+            margin-bottom: 20px;
             animation: bounce 1s ease infinite;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         .button {
@@ -61,6 +69,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-weight: bold;
         }
 
         .button:hover {
@@ -99,13 +108,31 @@
 
         /* Page Content */
         .content {
-            padding-top: 60px; /* Adjust this if your navbar height changes */
+            padding-top: 80px; /* Adjust this if your navbar height changes */
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .icon-container {
+                font-size: 48px;
+            }
+
+            .button {
+                padding: 10px 24px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="retail main.html">Defect Sales</a>
         <a href="cc main.html">Defect Contact Center</a>
         <a href="cm main.html">Defect Commercial</a>
@@ -114,7 +141,11 @@
     <div class="content">
         <div class="container">
             <h1>Thank You!</h1>
-            <div class="emoji">😊</div>
+            <!-- Replacing emoji with a professional icon -->
+            <div class="icon-container">
+                <i class="fas fa-smile"></i> <!-- You can replace this with a professional icon library like FontAwesome -->
+            </div>
+            <p>We appreciate your time. You can return to the main page by clicking below.</p>
             <a href="index.html" class="button">Go Back</a>
         </div>
     </div>
