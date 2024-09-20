@@ -26,6 +26,7 @@
 
         var options = {
             title: 'Contact Center Defect by Stage',
+            backgroundColor: 'transparent',
             legend: { position: 'none' },
             chartArea: {width: '50%'},
             hAxis: {
@@ -64,22 +65,19 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #fff;
         margin: 0;
         padding: 0;
     }
 
     #container {
         width: 100%;
-        height: 100%;
         max-width: 800px;
         margin: 60px auto;
         background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
-        margin-left: 220px; /* To account for the navbar width */
     }
 
     h1 {
@@ -116,25 +114,24 @@
         background-color: #45a049;
     }
 
-    /* Sidebar Menu */
+    /* Updated Navigation Menu */
     .navbar {
-        height: 100%;
-        width: 200px;
+        overflow: hidden;
+        background-color: #333;
         position: fixed;
         top: 0;
-        left: 0;
-        background-color: #333;
-        padding-top: 20px;
+        width: 100%;
         z-index: 1000;
     }
 
     .navbar a {
-        padding: 15px 20px;
-        text-align: left;
-        text-decoration: none;
+        float: left;
         display: block;
-        font-size: 17px;
         color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
     }
 
     .navbar a:hover {
@@ -149,7 +146,7 @@
 
     /* Page Content */
     .content {
-        padding-left: 220px; /* Leave space for the sidebar */
+        padding-top: 60px; /* Adjust this if your navbar height changes */
     }
 
     @media screen and (max-width: 600px) {
@@ -160,19 +157,12 @@
         #barchart_div {
             max-width: 100%;
         }
-
-        .navbar {
-            width: 100px; /* Narrower sidebar for small screens */
-        }
-
-        #container {
-            margin-left: 120px; /* Adjust content padding */
-        }
     }
 </style>
 </head>
 <body>
 
+<!-- Updated Navigation Menu -->
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="retail main.html">Defect Sales</a>
