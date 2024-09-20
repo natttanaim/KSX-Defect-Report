@@ -18,10 +18,10 @@
       var options = {
         chart: {
           title: 'Defect Severity by Project',
-          backgroundColor: 'transparent',
+          backgroundColor: 'transparent', // Keep chart background transparent
           subtitle: 'Serv1, Serv2, Serv3, Serv4',
         },
-        colors: ['#FF8A8A', '#FABC3F', '#9DBDFF', '#C1E2A4'] // Set custom colors for the bars
+        colors: ['#FF8A8A', '#FABC3F', '#9DBDFF', '#C1E2A4'] // Custom bar colors
       };
 
       var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -41,7 +41,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #ffffff; /* Set a uniform background color for the page */
       margin: 0;
       padding: 0;
     }
@@ -49,7 +49,7 @@
       width: 90%;
       max-width: 800px;
       margin: 60px auto;
-      background-color: #f4f4f4;
+      background-color: #ffffff; /* Make container the same color as the body */
       border-radius: 8px;
       padding: 20px;
       text-align: center;
@@ -117,7 +117,7 @@
 
     /* Page Content */
     .content {
-      padding-top: 60px; /* Adjust this if your navbar height changes */
+      padding-top: 60px; /* Adjust if navbar height changes */
     }
   </style>
 </head>
