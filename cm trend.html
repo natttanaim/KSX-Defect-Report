@@ -17,11 +17,11 @@
     function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-            ['Last 5 Weeks', 2, 5],
             ['Last 4 Weeks', 2, 1],
             ['Last 3 Weeks', 1, 0],
             ['Last 2 Weeks', 1, 0],
-            ['Last Week', 3, 9]
+            ['Last Week', 3, 9],
+            ['Last Week', 1, 0]
         ]);
 
         var options = {
@@ -40,7 +40,7 @@
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
             ['Configuration', 4, '#E5D9F2', '4'],
-            ['Apex Error', 2, '#F5EFFF', '2'],
+            ['Apex Error', 1, '#F5EFFF', '1'],
             ['Purge Issue', 1, '#CDC1FF', '1'],
             ['Data Invalid', 2, '#A594F9', '2']
         ]);
