@@ -133,7 +133,12 @@
   <!-- Main Content -->
   <div class="content">
     <div id="container">
-      <div id="update-date">Updated: September 27, 2024</div>
+    <div id="update-date"></div> <!-- The content will be inserted here -->
+    <script>
+      fetch('date.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('update-date').innerHTML = data);
+    </script>
       <h1>Defect KSX by Project</h1>
       <div id="columnchart_values"></div>
       <button id="next-page-button" onclick="window.location.href='chart defect by serv.html'">Next Page</button>
