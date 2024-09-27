@@ -178,13 +178,12 @@
   </div>
   
   <div id="container">
-    <!--<div id="update-date">Updated: September 27, 2024</div>-->
-    <div id="update-date"></div>
+    <div id="update-date"></div> <!-- The content will be inserted here -->
     <script>
-    fetch('date.html')
+      fetch('date.html')
       .then(response => response.text())
-      .then(data => document.getElementById('div').innerHTML = data);
-   </script>
+      .then(data => document.getElementById('update-date').innerHTML = data);
+    </script>
     <h1>Defect Tracking</h1>
     <div id="linechart"></div>
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
