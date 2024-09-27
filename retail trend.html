@@ -21,7 +21,7 @@
             ['Last 3 Weeks', 0, 0],
             ['Last 2 Weeks', 0, 2],
             ['Last Weeks', 0, 1],
-            ['This Week', 0, 1]
+            ['This Week', 1, 0]
         ]);
 
         var options = {
@@ -36,10 +36,10 @@
         chart.draw(data, options);
     }
 
-   /* function drawBarChart() {
+    function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Defect Category', 'Count']
-
+            ['Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
+            ['System Function Designed', 1, '#E5D9F2', '1']
         ]);
 
         var options = {
@@ -58,7 +58,7 @@
 
         var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
         chart.draw(data, options);
-    }*/
+    }
     
     function goToPreviousPage() {
       window.location.href = 'retail by stage.html';
