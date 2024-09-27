@@ -178,7 +178,12 @@
   </div>
   
   <div id="container">
-    <div id="update-date">Updated: September 27, 2024</div>
+    //<div id="update-date">Updated: September 27, 2024</div>
+    <script>
+    fetch('date.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('div').innerHTML = data);
+   </script>
     <h1>Defect Tracking</h1>
     <div id="linechart"></div>
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
