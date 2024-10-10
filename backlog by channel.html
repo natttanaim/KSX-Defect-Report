@@ -43,7 +43,40 @@
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+
+        // Add listener for chart click
+        google.visualization.events.addListener(chart, 'select', function() {
+            var selection = chart.getSelection();
+            if (selection.length > 0) {
+                var row = selection[0].row;
+                handleBarClick(row);
+            }
+        });
+
         chart.draw(data, options);
+    }
+
+    // Function to handle bar click based on row index
+    function handleBarClick(row) {
+        switch(row) {
+            case 0: // Bulk
+                window.location.href = 'bulk.html';
+                break;
+            case 1: // Apex
+                window.location.href = 'apex.html';
+                break;
+            case 2: // Email alert
+                window.location.href = 'email_alert.html';
+                break;
+            case 3: // Unassigned
+                window.location.href = 'unassigned.html';
+                break;
+            case 4: // Integration Server
+                window.location.href = 'integration_server.html';
+                break;
+            default:
+                console.log('No matching page found for selected bar.');
+        }
     }
 
     // Function to navigate to the next page
