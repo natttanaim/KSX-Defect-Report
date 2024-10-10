@@ -50,6 +50,9 @@
     function goToPreviousPage() {
         window.location.href = "backlog by channel.html";
     }
+    function goToNextPage() {
+        window.open('https://etms.krungsri.net:9443/ccm/web/projects/KSX(Sales%20and%20Services)%20Production%20Defects#action=com.ibm.team.workitem.runSavedQuery&id=_fRm7YBurEe6X95nCewOjqQ&filterAttribute=com.bay.workitem.attribute.channel01&filterValue=com.bay.workitem.enumeration.channel01.literal.l24&filterByExactMatch=true&tq=1728529601000', '_blank');
+    }
 </script>
 
 <style>
@@ -166,6 +169,7 @@
     <div id="barchart_div"></div>
     <div class="button-container">
         <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+        <button class="page-button" onclick="goToNextPage()">More Detail</button>
     </div>
 </div>
 
