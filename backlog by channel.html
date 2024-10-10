@@ -12,21 +12,15 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Type', 'Count', { role: 'style' },{ role: 'annotation' }],
-            ['To be discussed',  5, '#FFE9D0', '5'],
-            ['Ready to retest',  6, '#FFFED3', '6'],
-            ['Fixed', 1, '#BBE9FF', '1'],
-            ['Completed for Deployment',  1, '#B1AFFF', '1'],
-            ['Fix In Progress', 6, '#FFE9D0', '6'],
-            ['Ready to deploy', 6, '#FFFED3', '6'],
-            //['Need more information',  3, '#F6EACB', '3'],
-            //['Reopen',  3, '#F6EACB', '3'],
-            //['Investigating', 7, '#EECAD5', '7'],
-            ['Assigns', 11, '#BBE9FF', '11'],
-            ['New', 37, '#B1AFFF', '37']
+            ['Bulk',  39, '#FFE9D0', '39'],
+            ['Apex',  14, '#FFFED3', '14'],
+            ['Email alert', 11, '#BBE9FF', '11'],
+            ['Unassigned',  6, '#B1AFFF', '6'],
+            ['Integration Server',  1, '#FFE9D0', '1']
         ]);
 
         var options = {
-            title: 'Contact Center Defect by Stage',
+            title: 'Defect by Channel',
             backgroundColor: 'transparent',
             legend: { position: 'none' },
             chartArea: {width: '50%'},
@@ -167,13 +161,13 @@
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="retail main.html">Defect Sales</a>
-    <a href="cc main.html" class="active">Defect Contact Center</a>
+    <a href="cc main.html">Defect Contact Center</a>
     <a href="cm main.html">Defect Commercial</a>
-    <a href="backlog main.html" class="active">Back log</a>
+    <a href="backlog main.html" class="active">Backlog</a>
 </div>
 
 <div id="container" class="content">
-    <h1>Back log by Stage</h1>
+    <h1>Backlog by Channel</h1>
     <div id="barchart_div"></div>
     <div class="button-container">
         <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
