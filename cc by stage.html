@@ -48,6 +48,20 @@
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        
+        // Event listener for selecting the 'Reopen' bar
+        google.visualization.events.addListener(chart, 'select', function() {
+            var selection = chart.getSelection();
+            if (selection.length > 0) {
+                var selectedItem = selection[0].row;
+                
+                // Check if the selected bar is 'Reopen'
+                if (selectedItem === 2) {
+                    window.open('https://etms.krungsri.net:9443/ccm/web/projects/KSX(Sales%20and%20Services)%20Production%20Defects#action=com.ibm.team.workitem.runSavedQuery&id=_f6WzAEUJEeuzYN5lZlaXSA&filterAttribute=internalState&filterValue=com.ibm.team.workitem.defectWorkflow.state.s6&filterByExactMatch=true&tq=1728538417000', '_blank');
+                }
+            }
+        });
+
         chart.draw(data, options);
     }
 
