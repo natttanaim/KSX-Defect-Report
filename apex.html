@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backlog Defect APEX Job</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart", "bar"]});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Type', 'Count', { role: 'style' },{ role: 'annotation' }],
+            ['Apex Code',  13, '#FFE9D0', '13'],
+            ['Configuration',  2, '#FFFED3', '2'],
+            ['Field Validation', 1, '#BBE9FF', '1']
+        ]);
+
+        var options = {
+            title: 'Defect by Category(Bulk)',
+            backgroundColor: 'transparent',
+            legend: { position: 'none' },
+            chartArea: {width: '50%'},
+            hAxis: {
+                title: 'Defect Count',
+                minValue: 0
+            },
+            vAxis: {
+                title: 'Defect Stage'
+            },
+            annotations: {
+                alwaysOutside: false,
+                textStyle: {
+                    fontSize: 12,
+                    auraColor: 'none',
+                    color: '#000'
+                }
+            },
+            bar: {groupWidth: "85%"}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        chart.draw(data, options);
+    }
+
+
+    // Function to navigate to the previous page
+    function goToPreviousPage() {
+        window.location.href = "backlog by channel.html";
+    }
+    function goToNextPage() {
+        window.open('https://etms.krungsri.net:9443/ccm/web/projects/KSX(Sales%20and%20Services)%20Production%20Defects#action=com.ibm.team.workitem.runSavedQuery&id=_fRm7YBurEe6X95nCewOjqQ&filterAttribute=com.bay.workitem.attribute.channel01&filterValue=com.bay.workitem.enumeration.channel01.literal.l25&filterByExactMatch=true&tq=1728533869000', '_blank');
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+        width: 100%;
+        max-width: 800px;
+        margin: 60px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #barchart_div {
+        width: 100%;
+        height: 350px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .page-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .page-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Updated Navigation Menu */
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* Page Content */
+    .content {
+        padding-top: 60px; /* Adjust this if your navbar height changes */
+    }
+
+    @media screen and (max-width: 600px) {
+        #container {
+            padding: 10px;
+        }
+
+        #barchart_div {
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Updated Navigation Menu -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="retail main.html">Defect Sales</a>
+    <a href="cc main.html">Defect Contact Center</a>
+    <a href="cm main.html">Defect Commercial</a>
+    <a href="backlog main.html" class="active">Backlog</a>
+</div>
+
+<div id="container" class="content">
+    <h1>Backlog Bulk drilldown</h1>
+    <div id="barchart_div"></div>
+    <div class="button-container">
+        <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+        <button class="page-button" onclick="goToNextPage()">More Detail</button>
+    </div>
+</div>
+
+</body>
+</html>
