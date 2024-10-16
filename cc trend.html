@@ -17,11 +17,11 @@
     function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
             ['Week', 'Open Defects', 'Closed Defects'],
-            ['Last 4 Weeks', 2, 0],
-            ['Last 3 Weeks', 2, 13],
-            ['Last 2 Weeks', 2, 6],
-            ['Last Week', 1, 9],
-            ['This Week', 0, 9]
+            ['Last 4 Weeks', 2, 13],
+            ['Last 3 Weeks', 2, 6],
+            ['Last 2 Weeks', 1, 9],
+            ['Last Week', 0, 9],
+            ['This Week', 0, 0]
         ]);
 
         var options = {
@@ -39,9 +39,9 @@
     function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
             ['New Defect Category', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['cfr', 1, '#F5EFFF', '1'],  // Steel blue
+            //['cfr', 1, '#F5EFFF', '1'],  // Steel blue
             ['Live Chat', 2, '#CDC1FF', '2'],  // Dark grey
-            ['Chat-Switching', 2, '#8967B3', '2'],
+            ['Chat-Switching', 1, '#8967B3', '1'],
             ['Social', 2, '#E5D9F2', '2']// Chocolate
             //['CCRP', 1, '#624E88', '1']  // Slate grey
         ]);
