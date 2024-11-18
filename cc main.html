@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Defects in Contact Center Project</title>
   <style>
+    .special-effect {
+      animation: blink 1s infinite;
+      color: #ff5733; /* Bright color for emphasis */
+      font-weight: bold;
+    }
+    
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -101,7 +115,9 @@
   
   <h1>Defects in Contact Center Project</h1>
   <div class="underline"></div>
-  <div class="highlight">Total Defects: 50</div>
+  <div class="highlight">
+  Total Defects: <span class="special-effect">47</span>
+  </div>
   <div class="button-container">
     <button class="page-button" onclick="goToPreviousPage()">Previous</button>
     <button class="page-button" onclick="goToNextPage()">Next</button>
