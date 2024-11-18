@@ -12,7 +12,7 @@
 
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ['Week', 'Retail', 'Contact Center', 'CM','Back log'],
+        ['Week', 'Retail', 'Contact Center', 'CM', 'Backlog'],
         ['Week 1', 13, 123, 21, 87],
         ['Week 2', 14, 123, 21, 87],
         ['Week 3', 14, 120, 20, 87],
@@ -26,8 +26,8 @@
         ['Week 11', 14, 104, 23, 85],
         ['Week 12', 14, 99, 23, 87],
         ['Week 13', 14, 99, 24, 88],
-        ['Week 14', 15, 97, 24 , 88],
-        ['Week 15', 14, 93, 27 , 84],
+        ['Week 14', 15, 97, 24, 88],
+        ['Week 15', 14, 93, 27, 84],
         ['Week 16', 14, 93, 27, 84],
         ['Week 17', 14, 90, 30, 84],
         ['Week 18', 13, 91, 31, 85],
@@ -70,13 +70,13 @@
         height: 400,
         series: {
           0: { color: '#FF5733' }, // Retail
-          1: { color: '#FFD700' }, // Contact Center (Solid magenta for blinking effect)
+          1: { color: '#FFD700' }, // Contact Center (Gold color)
           2: { color: '#0000FF' }, // CM
           3: { color: '#008000' }  // Backlog
         }
+      };
 
       var chart = new google.visualization.LineChart(document.getElementById('linechart'));
-
       chart.draw(data, options);
     }
     
@@ -177,17 +177,6 @@
         padding: 10px 24px;
         font-size: 14px;
       }
-    }
-
-    /* Blinking effect for the Contact Center line */
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    #linechart svg path:nth-child(2) {
-      animation: blink 1s infinite;
     }
   </style>
 </head>
