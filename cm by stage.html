@@ -12,14 +12,14 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Type', 'Count', { role: 'style' }, { role: 'annotation' }],
-            ['Reopen', 4, '#D1E9F6', '4'],
+            //['Reopen', 4, '#D1E9F6', '4'],
             ['Request to close', 3, '#F6EACB', '3'],
-            //['Completed for deploy', 1, '#F1D3CE', '1'],
-            ['Ready to retest', 5, '#EECAD5', '5'],
-            //['To be discuss', 1, '#D1E9F6', '1'],
-            ['Ready to deploy', 5, '#F6EACB', '5'],
-            ['Investigating', 4, '#F1D3CE', '4'],
-            ['Assigns', 7, '#D1E9F6', '7']
+            ['Completed for deploy', 1, '#F1D3CE', '1'],
+            ['Ready to retest', 6, '#EECAD5', '6'],
+            ['Fix in progress', 3, '#D1E9F6', '3'],
+            ['Ready to deploy', 6, '#F6EACB', '6'],
+            ['Investigating', 2, '#F1D3CE', '2'],
+            ['Assigns', 6, '#D1E9F6', '6']
         ]);
 
         var options = {
