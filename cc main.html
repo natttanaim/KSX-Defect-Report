@@ -6,17 +6,20 @@
   <title>Defects in Contact Center Project</title>
   <style>
     .special-effect {
-      animation: blink 1s infinite;
-      color: #ff5733; /* Bright color for emphasis */
       font-weight: bold;
+      font-size: 36px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400%; /* Makes the gradient animation smoother */
+      -webkit-background-clip: text; /* Clips the background to the text */
+      -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+      animation: rainbow 3s infinite; /* Animates the gradient */
     }
-    
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
+    @keyframes rainbow {
+      0% {
+        background-position: 0%;
       }
-      50% {
-        opacity: 0.5;
+      100% {
+        background-position: 100%;
       }
     }
     body {
