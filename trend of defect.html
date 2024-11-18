@@ -178,18 +178,6 @@
         font-size: 14px;
       }
     }
-
-    /* Blinking effect for the Contact Center line */
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    /* Apply blinking animation to the second line (Contact Center) */
-    #linechart svg path:nth-child(2) {
-      animation: blink 1s infinite;
-    }
   </style>
 </head>
 <body>
@@ -200,4 +188,21 @@
     <a href="retail main.html">Defect Sales</a>
     <a href="cc main.html">Defect Contact Center</a>
     <a href="cm main.html">Defect Commercial</a>
-    <a href="backlog main.html">Backlog
+    <a href="backlog main.html">Backlog</a>
+  </div>
+  
+  <div id="container">
+    <div id="update-date"></div> <!-- The content will be inserted here -->
+    <script>
+      fetch('date.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('update-date').innerHTML = data);
+    </script>
+    <h1>Defect Tracking</h1>
+    <div id="linechart"></div>
+    <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
+    <button class="page-button" onclick="goToNextPage()">Next Page</button>
+  </div>
+
+</body>
+</html>
