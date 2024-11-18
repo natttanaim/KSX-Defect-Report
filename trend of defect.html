@@ -66,21 +66,26 @@
         backgroundColor: 'transparent',
         curveType: 'function',
         legend: { position: 'bottom' },
-        width: '100%', // Make the chart width 100% of its container
-        height: 400
+        width: '100%',
+        height: 400,
+        series: {
+          0: { color: '#FF0000' }, // Retail in red
+          1: { color: 'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)' }, // Rainbow for Contact Center
+          2: { color: '#0000FF' }, // CM in blue
+          3: { color: '#008000' }  // Backlog in green
+        }
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('linechart'));
-
       chart.draw(data, options);
     }
     
     function goToPreviousPage() {
-      window.location.href='chart defect by serv.html';
+      window.location.href = 'chart defect by serv.html';
     }
     
     function goToNextPage() {
-      window.location.href='retail main.html';
+      window.location.href = 'retail main.html';
     }
   </script>
   <style>
@@ -126,78 +131,14 @@
     .page-button:hover {
       background-color: #45a049;
     }
-
-    /* Navigation Menu */
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .navbar a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .navbar a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    /* Page Content */
-    .content {
-      padding-top: 60px; /* Adjust this if your navbar height changes */
-    }
-
-    /* Media Query for Mobile Devices */
-    @media only screen and (max-width: 600px) {
-      #container {
-        width: 95%;
-      }
-      
-      .page-button {
-        padding: 10px 24px;
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- Navigation Menu -->
-  <div class="navbar">
-    <a href="index.html" class="active">Home</a>
-    <a href="retail main.html">Defect Sales</a>
-    <a href="cc main.html">Defect Contact Center</a>
-    <a href="cm main.html">Defect Commercial</a>
-    <a href="backlog main.html">Backlog</a>
-  </div>
-  
   <div id="container">
-    <div id="update-date"></div> <!-- The content will be inserted here -->
-    <script>
-      fetch('date.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('update-date').innerHTML = data);
-    </script>
     <h1>Defect Tracking</h1>
     <div id="linechart"></div>
     <button class="page-button" onclick="goToPreviousPage()">Previous Page</button>
     <button class="page-button" onclick="goToNextPage()">Next Page</button>
   </div>
-
 </body>
 </html>
