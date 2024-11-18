@@ -178,6 +178,17 @@
         font-size: 14px;
       }
     }
+    /* Blinking effect for the Contact Center line */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Apply blinking animation to the second line (Contact Center) */
+    #linechart svg path:nth-child(2) {
+      animation: blink 1s infinite;
+    }
   </style>
 </head>
 <body>
