@@ -58,7 +58,8 @@
         ['Week 43', 8, 58, 30, 67],
         ['Week 44', 8, 59, 30, 67],
         ['Week 45', 7, 50, 28, 67],
-        ['Week 46', 8, 47, 27, 67]
+        ['Week 46', 8, 47, 27, 67],
+        ['Week 47', 9, 51, 28, 67]
       ]);
 
       var options = {
@@ -178,17 +179,7 @@
         font-size: 14px;
       }
     }
-    /* Blinking effect for the Contact Center line */
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      70% { opacity: 1; }
-    }
 
-    /* Apply blinking animation to the second line (Contact Center) */
-    #linechart svg path:nth-child(2) {
-      animation: blink 1s infinite;
-    }
   </style>
 </head>
 <body>
